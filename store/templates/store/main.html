@@ -34,8 +34,28 @@
 		        }
 		    }
 		    return cookieValue;
-		}
+		} 
     var csrftoken = getToken('csrftoken')
+    
+    function getCookie(name){
+      //split cookie string and all individual name=value pairs in an array
+      var cookieArr = document.cookie.split(';');
+
+      //Loop through the array of elements
+      for(var i=0; i<cookieArr.length; i++){
+        var cookiePair = cookieArr[i].split('=');
+
+        //removing white space at the begining of the cookie name and compare it with the given string
+        if(name == cookiePair[0].trim()){
+          //Decode the cookie value and return
+          return decodeURIComponent(cookiePair[1]);
+        }
+      }
+      //return null if not found
+      return null;
+    }
+    var cart = JSON.parse(getCookie('cart'))
+    console.log
  </script>
   </head>
   <body>
