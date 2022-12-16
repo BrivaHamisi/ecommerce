@@ -15,7 +15,7 @@ for (i=0; i< updateBtns.length; i++){
     })
 }
 function addCookieItem(productId, action){
-    console.log('User is not authenticated...')
+    console.log('Not Logged in...')
 
     if (action = 'add'){
         if (cart[productId] == undefined ){
@@ -36,6 +36,7 @@ function addCookieItem(productId, action){
 
     console.log('The Cart      ',cart)
     document.cookie = 'cart=' + JSON.stringify(cart) + ";domain;path=/"
+    location.reload()
 }
 
 function updateUserOrder(productId, action){
