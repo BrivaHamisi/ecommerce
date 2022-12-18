@@ -26,7 +26,7 @@ function addCookieItem(productId, action){
         }
     }
     if (action == 'remove'){
-        cart[productId]['quantity'] -=1
+        cart[productId]['quantity'] -= 1
 
         if (cart[productId]['quantity'] <= 0){
             console.log('Remove Item')
@@ -34,7 +34,7 @@ function addCookieItem(productId, action){
         }
     }
 
-    console.log('The Cart      ',cart)
+    console.log('The Cart',cart)
     document.cookie = 'cart=' + JSON.stringify(cart) + ";domain;path=/"
     location.reload()
 }
